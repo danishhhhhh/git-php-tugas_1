@@ -19,9 +19,21 @@ function tambah($post) {
     $query = "INSERT INTO datacharactercars VALUES ('','$name', '$description', '$wheels', '$image')";
   
     mysqli_query($koneksi, $query);
+
+    $var1 = mysqli_affected_rows($koneksi);
+
     
     return mysqli_affected_rows($koneksi);
+}
+
+function hapus($id) {
+    global $koneksi;
     
+    $query = "DELETE FROM datacharactercars WHERE no = $id";
+  
+    mysqli_query($koneksi, $query);
+    
+    return mysqli_affected_rows($koneksi);
 }
 
 ?>

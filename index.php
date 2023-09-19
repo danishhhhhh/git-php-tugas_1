@@ -33,6 +33,7 @@ $dataCharaCars = query("SELECT * FROM datacharactercars");
         <th class = "name row-title">Name</th>
         <th class = "description row-title">Deskripsi</th>
         <th class = "roda row-title">Roda</th>
+        <th class = "aksi row-title">Aksi</th>
         
     </tr>
     <?php 
@@ -48,6 +49,7 @@ $dataCharaCars = query("SELECT * FROM datacharactercars");
             <td class = "name"><?php echo $character->name; ?></td>
             <td class = "description"><?php echo $character->description; ?></td>
             <td class = "roda"><?php echo $character->roda; ?></td>
+            <td class = "aksi"><button type="button"><a href="hapus.php?id=<?= $character->no ?>">Delete</a></button></td>
         </tr>
 
         
