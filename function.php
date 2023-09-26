@@ -20,9 +20,8 @@ function tambah($post) {
   
     mysqli_query($koneksi, $query);
 
-    $var1 = mysqli_affected_rows($koneksi);
+    print_r(mysqli_affected_rows($koneksi));
 
-    
     return mysqli_affected_rows($koneksi);
 }
 
@@ -33,6 +32,27 @@ function hapus($id) {
   
     mysqli_query($koneksi, $query);
     
+    return mysqli_affected_rows($koneksi);
+}
+
+function ubah($post) {
+global $koneksi;
+    
+    $no = $post['id'];
+    $name = $post['name'];
+    $image = $post['image'];
+    $description = $post['description'];
+    $wheels = $post['wheels'];
+    
+    $query = "UPDATE datacharactercars SET 
+                name = '$name', 
+                image = '$image', 
+                description = '$description', 
+                roda = '$wheels' 
+                WHERE no = $no";
+  
+    mysqli_query($koneksi, $query);
+
     return mysqli_affected_rows($koneksi);
 }
 

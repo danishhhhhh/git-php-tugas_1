@@ -59,18 +59,3 @@ if (isset($_POST["submit"])) {
 </body>
 </html>
 
-<?php
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $result = testvar();
-// }
-
-// function testvar(){
-//   $test = $_POST['name'];
-//   $test2 = $_POST['image'];
-//   $test3 = $_POST['description'];
-//   $test4 = $_POST['wheels'];
-//   insertData($test, $test3, $test4, $test2);
-// };
-
-?>

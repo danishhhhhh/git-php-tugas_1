@@ -5,9 +5,7 @@ include("koneksi.php");
 require("function.php");
 
 $dataCharaCars = query("SELECT * FROM datacharactercars");
-
-
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -41,18 +39,19 @@ $dataCharaCars = query("SELECT * FROM datacharactercars");
     $no = 1;
     foreach ($dataCharaCars as $character) {
         
-        ?>
+    ?>
 
         <tr>
             <td class = "no"><?php echo $no++; ?></td>
-            <td class = "image-title"><img class= "image" style= "background-color: <?php echo $dataBackgroundColor; ?>" src="<?php echo $character->image; ?>" alt="Photo <?php echo $character->name; ?>"></td>
+            <td class = "image-title"><img class= "image" src="assets/<?= $character->image; ?>" alt="Photo <?php echo $character->name; ?>"></td>
             <td class = "name"><?php echo $character->name; ?></td>
             <td class = "description"><?php echo $character->description; ?></td>
             <td class = "roda"><?php echo $character->roda; ?></td>
-            <td class = "aksi"><button type="button"><a href="hapus.php?id=<?= $character->no ?>">Delete</a></button></td>
+            <td class = "aksi">
+                <button type="button"><a href="hapus.php?id=<?= $character->no ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
+                <button type="button"><a href="ubah.php?id=<?= $character->no ?>">Ubah</a>
+            </button></td>
         </tr>
-
-        
 
     <?php
     } ?>
